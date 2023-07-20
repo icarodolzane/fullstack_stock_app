@@ -1,0 +1,64 @@
+.card-produto-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5px;
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.produto-foto {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.produto-descricao {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.produto-quantidade {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.status {
+  margin-right: 10px;
+  padding: 5px;
+}
+
+.status-text {
+  font-size: 12px;
+  color: white;
+}
+
+.vermelho {
+  background-color: #ff5252;
+}
+
+.amarelo {
+  background-color: #ffc107;
+}
+
+.verde {
+  background-color: #4caf50;
+}
+
+.quantidade-container {
+  display: flex;
+  align-items: center;
+}
+
+.quantidade {
+  margin: 0 10px;
+}
+
+.produto-valor {
+  font-weight: bold;
+}
+
