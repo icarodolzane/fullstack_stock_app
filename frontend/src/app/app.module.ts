@@ -15,7 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { CheckboxModule } from 'primeng/checkbox';
 import { PaginatorModule } from 'primeng/paginator';
 import { CardProdutoComponent } from './card-produto/card-produto.component'; // Certifique-se de ter o caminho correto aqui
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +35,8 @@ import { CardProdutoComponent } from './card-produto/card-produto.component'; //
     ButtonModule,
     PasswordModule,
     CheckboxModule,
-    PaginatorModule
+    PaginatorModule,
+    HttpClientModule,
   ],
   bootstrap: [AppComponent]
 })

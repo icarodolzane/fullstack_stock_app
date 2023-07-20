@@ -1,4 +1,4 @@
-<div class="card-produto-container">
+<div class="card-produto-container" *ngIf="cotacaoDolar !== undefined">
   <img [src]="produto.foto" alt="Foto do Produto" class="produto-foto">
   <div class="produto-descricao">{{ produto.descricao }}</div>
   <div class="produto-quantidade">
@@ -12,5 +12,7 @@
     </div>
   </div>
   <div class="produto-valor">Valor: R$ {{ produto.valor }}</div>
+  <div class="produto-valor" *ngIf="valorDolar !== undefined">Valor: USD {{ valorDolar.toFixed(2) }}</div>
+  <div class="produto-valor" *ngIf="valorDolar === undefined">Valor: USD Indisponível</div>
   <p-button label="Comprar" styleClass="p-button-raised p-button-success"></p-button>
 </div>
