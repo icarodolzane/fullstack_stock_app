@@ -15,22 +15,22 @@ export class HomeComponent {
   produtoFilter: boolean = false;
   filtroDescricao: string = '';
 
-  produtos = produtos; // Atribua o array de produtos
-  produtosFiltrados: any[] = []; // Array para armazenar os produtos filtrados
+  produtos = produtos;
+  produtosFiltrados: any[] = [];
 
   onFilterChange(filterName: string, event: any) {
     switch (filterName) {
       case 'estoque':
         this.estoqueFilter = event.checked;
-        // Implemente a lógica de filtro de estoque aqui
+        // Implementar a lógica de filtro de estoque aqui
         break;
       case 'categoria':
         this.categoriaFilter = event.checked;
-        // Implemente a lógica de filtro de categoria aqui
+        // Implementar a lógica de filtro de categoria aqui
         break;
       case 'produto':
         this.produtoFilter = event.checked;
-        // Implemente a lógica de filtro de produto aqui
+        // Implementar a lógica de filtro de produto aqui
         break;
       default:
         break;
