@@ -46,6 +46,7 @@ import { CardHistoricoVendasComponent } from './card-historico-vendas/card-histo
 import { CardModule } from 'primeng/card';
 import { GraficoDonutComponent } from './grafico-donut/grafico-donut.component';
 import { ChartModule } from 'primeng/chart';
+import { GraficoBarrasComponent } from './grafico-barras/grafico-barras.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { ChartModule } from 'primeng/chart';
     VendasEditarComponent,
     CardHistoricoVendasComponent,
     GraficoDonutComponent,
+    GraficoBarrasComponent,
 
   ],
   imports: [
