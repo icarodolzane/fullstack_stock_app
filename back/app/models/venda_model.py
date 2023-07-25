@@ -3,6 +3,7 @@ from sqlalchemy.orm import relationship
 from configs.database import Base
 import datetime
 
+
 class VendaModel(Base):
     __tablename__ = "Vendas"
     id: int = Column(Integer, primary_key=True, index=True, unique=True)
