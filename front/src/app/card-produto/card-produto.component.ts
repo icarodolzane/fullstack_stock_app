@@ -16,6 +16,7 @@ interface Produto {
   quantidade: number;
   valor: number;
   quantidadeVenda: number;
+  quantidadeAnterior: number;
   isEsgotado?: boolean;
   descricaoCategoria?: string;
 
@@ -55,12 +56,15 @@ export class CardProdutoComponent {
 
     forkJoin([categorias$, produtos$]).subscribe(([categorias, produtos]) => {
       this.categorias = categorias;
-      this.produtos = produtos.map((produto: Produto) => ({
-        ...produto,
-        quantidadeVenda: 1,
-        descricaoCategoria: this.getDescricaoCategoria(produto.categoria_id),
-        isEsgotado: produto.quantidade === 0 || produto.quantidadeVenda > produto.quantidade, // Adiciona o atributo isEsgotado
-      }));
+      this.produtos = produtos
+        .filter((produto: Produto) => produto.quantidade !== 0) // Filtra os produtos com quantidade diferente de zero
+        .map((produto: Produto) => ({
+          ...produto,
+          quantidadeVenda: 1,
+          quantidadeAnterior: 1,
+          descricaoCategoria: this.getDescricaoCategoria(produto.categoria_id),
+          isEsgotado: produto.quantidade === 0 || produto.quantidadeVenda > produto.quantidade,
+        }));
       this.produtosFiltrados = this.produtos;
     });
 
@@ -123,9 +127,10 @@ export class CardProdutoComponent {
   }
 
   diminuirQuantidade(produto: Produto): void {
-    if (produto?.quantidadeVenda !== undefined && produto.quantidadeVenda > 0) {
+    if (produto?.quantidadeVenda && produto.quantidadeVenda > 0) {
       produto.quantidadeVenda--;
-      produto.isEsgotado = produto.quantidade === 0 || produto.quantidadeVenda > produto.quantidade; // Atualiza o atributo isEsgotado
+      produto.isEsgotado = produto.quantidade === 0 || produto.quantidadeVenda > produto.quantidade;
+      produto.quantidadeAnterior = produto.quantidadeVenda; // Atualiza quantidadeAnterior
       this.atualizarQuantidade(produto);
     }
   }
@@ -136,7 +141,8 @@ export class CardProdutoComponent {
       if (produto.quantidadeVenda > produto.quantidade) {
         produto.quantidadeVenda = produto.quantidade;
       }
-      produto.isEsgotado = produto.quantidade === 0 || produto.quantidadeVenda > produto.quantidade; // Atualiza o atributo isEsgotado
+      produto.isEsgotado = produto.quantidade === 0 || produto.quantidadeVenda > produto.quantidade;
+      produto.quantidadeAnterior = produto.quantidadeVenda; // Atualiza quantidadeAnterior
       this.atualizarQuantidade(produto);
     }
   }
