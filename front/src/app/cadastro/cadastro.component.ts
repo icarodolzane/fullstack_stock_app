@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Message } from 'primeng/api';
+import { MessageService } from 'primeng/api';
+
 
 @Component({
   selector: 'app-cadastro',
@@ -17,7 +19,8 @@ export class CadastroComponent {
   message1: Message[] = [];
   message2: Message[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private messageService: MessageService) {}
+
 
   ngOnInit() {
     this.message1 = [
@@ -59,6 +62,10 @@ export class CadastroComponent {
           // Exibir a mensagem de sucesso apenas quando a resposta for bem-sucedida
           this.isRegisterFailed = false;
           this.isRegisterSuccess = true;
+
+          // Limpar as mensagens após um cadastro bem-sucedido
+          this.messageService.clear('message1');
+          this.messageService.clear('message2');
         },
         (error) => {
           console.error('Erro ao cadastrar usuário.', error);

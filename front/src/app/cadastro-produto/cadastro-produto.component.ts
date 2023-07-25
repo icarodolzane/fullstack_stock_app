@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProdutosService, ProductPOST } from '../produtos.service';
-import { Message } from 'primeng/api';
+import { MessageService } from 'primeng/api';
 import { CategoriasService, Categoria } from '../categorias.service';
+import { Message } from 'primeng/api';
+
 @Component({
   selector: 'app-cadastro-produto',
   templateUrl: './cadastro-produto.component.html',
@@ -23,7 +25,12 @@ export class CadastroProdutoComponent implements OnInit {
   message2: Message[] = [];
   categorias: Categoria[] = [];
 
-  constructor(private formBuilder: FormBuilder, private produtosService: ProdutosService, private categoriasService: CategoriasService) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private produtosService: ProdutosService,
+    private categoriasService: CategoriasService,
+    private messageService: MessageService
+  ) {}
 
   ngOnInit() {
     this.carregarCategorias();
@@ -54,6 +61,13 @@ export class CadastroProdutoComponent implements OnInit {
           console.log('Produto cadastrado com sucesso:', response);
           this.isRegisterFailed = false;
           this.isRegisterSuccess = true;
+
+          // Limpar os campos após o cadastro bem-sucedido (opcional)
+          this.form.reset();
+
+          // Limpar as mensagens após um cadastro bem-sucedido
+          this.messageService.clear('message1');
+          this.messageService.clear('message2');
         },
         (error) => {
           this.isRegisterFailed = true;
@@ -69,6 +83,5 @@ export class CadastroProdutoComponent implements OnInit {
       this.categorias = categorias;
       console.log(this.categorias);
     });
-
   }
 }

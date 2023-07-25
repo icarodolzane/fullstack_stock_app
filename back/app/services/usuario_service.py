@@ -28,6 +28,7 @@ class UsuarioService:
     
     def atualizarUsuario(self, usuario: UsuarioModel):
         if self.obterUsuarioPorId(usuario.id):
+            usuario.senha = bcrypt.hashpw(usuario.senha.encode("utf-8"), bcrypt.gensalt())
             atualizado = self.repo.inserir(usuario)
             if not atualizado:
                 raise HTTPException(
