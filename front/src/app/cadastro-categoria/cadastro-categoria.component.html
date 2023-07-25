@@ -1,0 +1,13 @@
+<div class="cadastro-container">
+  <h2>Cadastro de categoria</h2>
+  <div class="cadastro-form">
+    <input pInputText type="text" class="p-inputtext-lg" placeholder="Nova categoria" [(ngModel)]="descricaoCategoria" />
+    <button type="button" pButton label="Cadastrar" class="p-button-primary" (click)="cadastrarCategoria()"></button>
+    <div *ngIf="isRegisterFailed">
+      <p-messages [value]="message1"></p-messages>
+    </div>
+    <div *ngIf="isRegisterSuccess">
+      <p-messages [value]="message2"></p-messages>
+    </div>
+  </div>
+</div>

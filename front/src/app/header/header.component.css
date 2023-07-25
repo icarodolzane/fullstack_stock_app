@@ -1,0 +1,15 @@
+.header-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px;
+  background-color: #f1f1f1;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+    font-family: epilogue;
+    color: var(--highlight-text-color);
+
+}

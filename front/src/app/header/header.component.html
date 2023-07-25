@@ -1,0 +1,17 @@
+<div class="header-container">
+  <img src="https://www.iatecam.org.br/images/logo.png" alt="logo">
+  <h1>Controle de Estoque IATECAM</h1>
+    <!-- <p-toolbar>
+      <div class="p-toolbar-group-start">
+        <p-button label="Cadastrar usuário" icon="pi pi-plus" class="mr-2" (click)="cadastrarUsuario()"></p-button>
+        <p-button label="Cadastrar categoria" icon="pi pi-plus" class="mr-2"(click)="cadastrarCategoria()"></p-button>
+        <p-button label="Cadastrar produto" icon="pi pi-plus" class="mr-2" (click)="cadastrarProduto()"></p-button>
+        <p-button label="Produtos" class="mr-2" styleClass="p-button-warning" (click)="navegaProdutos()"></p-button>
+      <p-button label="Dashboard" class="mr-2" styleClass="p-button-help" (click)="navegaDashboard()"></p-button>
+      </div>
+    </p-toolbar> -->
+    <div class="card flex justify-content-center">
+      <button #btn type="button" pButton icon="pi pi-bars" label="Menu" (click)="menu.toggle($event)"></button>
+      <p-tieredMenu #menu [model]="items" [popup]="true"></p-tieredMenu>
+    </div>
+  </div>

@@ -1,0 +1,17 @@
+
+.search-container{
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+
+.search {
+  display: flex;
+  gap: 20px;
+}
+
+.search input {
+  min-width: 400px;
+  width: 200px;
+}
+

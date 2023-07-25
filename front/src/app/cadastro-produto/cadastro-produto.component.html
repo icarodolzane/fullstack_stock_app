@@ -1,0 +1,32 @@
+<div class="card">
+  <h3>Cadastrar Produto</h3>
+  <form [formGroup]="form">
+    <div class="p-field">
+      <label for="descricao">Descrição</label>
+      <input id="descricao" type="text" pInputText formControlName="descricao" required />
+    </div>
+    <div class="p-field">
+      <label for="valor">Valor</label>
+      <input id="valor" type="number" pInputText formControlName="valor" required />
+    </div>
+    <div class="p-field">
+      <label for="quantidade">Quantidade</label>
+      <input id="quantidade" type="number" pInputText formControlName="quantidade" required />
+    </div>
+    <div class="p-field">
+      <label for="categoria_id">Categoria</label>
+      <p-dropdown formControlName="categoria_id" [options]="categorias" optionLabel="descricao"></p-dropdown>
+    </div>
+    <div class="p-field">
+      <label for="imagem">Imagem</label>
+      <input id="imagem" type="text" pInputText formControlName="imagem" required />
+    </div>
+    <p-button (click)="cadastrarProduto()" label="Cadastrar" icon="pi pi-save" class="p-button-success"></p-button>
+  </form>
+  <div *ngIf="isRegisterFailed">
+    <p-messages [value]="message1"></p-messages>
+  </div>
+  <div *ngIf="isRegisterSuccess">
+    <p-messages [value]="message2"></p-messages>
+  </div>
+</div>
