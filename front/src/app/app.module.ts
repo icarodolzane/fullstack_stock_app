@@ -42,6 +42,10 @@ import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { ToastModule } from 'primeng/toast';
 import { ListaVendasComponent } from './lista-vendas/lista-vendas.component';
 import { VendasEditarComponent } from './vendas-editar/vendas-editar.component';
+import { CardHistoricoVendasComponent } from './card-historico-vendas/card-historico-vendas.component';
+import { CardModule } from 'primeng/card';
+import { GraficoDonutComponent } from './grafico-donut/grafico-donut.component';
+import { ChartModule } from 'primeng/chart';
 
 @NgModule({
   declarations: [
@@ -61,6 +65,8 @@ import { VendasEditarComponent } from './vendas-editar/vendas-editar.component';
     ProdutosEditarComponent,
     ListaVendasComponent,
     VendasEditarComponent,
+    CardHistoricoVendasComponent,
+    GraficoDonutComponent,
 
   ],
   imports: [
@@ -88,7 +94,10 @@ import { VendasEditarComponent } from './vendas-editar/vendas-editar.component';
     TagModule,
     VirtualScrollerModule,
     ConfirmPopupModule,
-    ToastModule
+    ToastModule,
+    CardModule,
+    ChartModule
+
 
   ],
   providers: [
