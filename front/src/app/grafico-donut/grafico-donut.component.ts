@@ -34,8 +34,8 @@ export class GraficoDonutComponent implements OnInit {
             this.porCategoriaLabels[2]?.total,
             this.porCategoriaLabels[3]?.total,
           ],
-          backgroundColor: [documentStyle.getPropertyValue('--blue-500'), documentStyle.getPropertyValue('--yellow-500'), documentStyle.getPropertyValue('--green-500')],
-          hoverBackgroundColor: [documentStyle.getPropertyValue('--blue-400'), documentStyle.getPropertyValue('--yellow-400'), documentStyle.getPropertyValue('--green-400')]
+          backgroundColor: [ documentStyle.getPropertyValue('--red-500'),documentStyle.getPropertyValue('--blue-500'), documentStyle.getPropertyValue('--yellow-500'), documentStyle.getPropertyValue('--green-500', )],
+          hoverBackgroundColor: [ documentStyle.getPropertyValue('--red-500'),documentStyle.getPropertyValue('--blue-500'), documentStyle.getPropertyValue('--yellow-500'), documentStyle.getPropertyValue('--green-500', )]
         }
       ]
     };

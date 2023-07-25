@@ -35,7 +35,7 @@
             </div>
             <div class="quantidade-container">
               <button pButton icon="pi pi-minus" class="p-button-rounded" (click)="diminuirQuantidade(product)"></button>
-              <input type="number" [(ngModel)]="product.quantidadeVenda" (change)="atualizarQuantidade(product)">
+              <input type="number" [(ngModel)]="product.quantidadeVenda" (change)="atualizarQuantidade(product)" min="1"> <!-- Adicionamos o atributo "min" para garantir que o valor mínimo seja 1 -->
               <button pButton icon="pi pi-plus" class="p-button-rounded" (click)="aumentarQuantidade(product)"></button>
             </div>
             <div class="flex sm:flex-column align-items-center sm:align-items-end gap-3 sm:gap-2">

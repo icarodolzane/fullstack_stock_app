@@ -15,9 +15,10 @@ interface Produto {
   imagem: string;
   quantidade: number;
   valor: number;
-  quantidadeVenda?: number;
+  quantidadeVenda: number;
   isEsgotado?: boolean;
   descricaoCategoria?: string;
+
 }
 
 @Component({
@@ -56,11 +57,11 @@ export class CardProdutoComponent {
       this.categorias = categorias;
       this.produtos = produtos.map((produto: Produto) => ({
         ...produto,
-        quantidadeVenda: 0,
-        descricaoCategoria: this.getDescricaoCategoria(produto.categoria_id)
+        quantidadeVenda: 1,
+        descricaoCategoria: this.getDescricaoCategoria(produto.categoria_id),
+        isEsgotado: produto.quantidade === 0 || produto.quantidadeVenda > produto.quantidade, // Adiciona o atributo isEsgotado
       }));
       this.produtosFiltrados = this.produtos;
-
     });
 
     this.cotacaoDolarService.getCotacaoDolar().subscribe((data) => {
@@ -122,8 +123,9 @@ export class CardProdutoComponent {
   }
 
   diminuirQuantidade(produto: Produto): void {
-    if (produto?.quantidadeVenda && produto.quantidadeVenda > 0) {
+    if (produto?.quantidadeVenda !== undefined && produto.quantidadeVenda > 0) {
       produto.quantidadeVenda--;
+      produto.isEsgotado = produto.quantidade === 0 || produto.quantidadeVenda > produto.quantidade; // Atualiza o atributo isEsgotado
       this.atualizarQuantidade(produto);
     }
   }
@@ -133,20 +135,8 @@ export class CardProdutoComponent {
       produto.quantidadeVenda++;
       if (produto.quantidadeVenda > produto.quantidade) {
         produto.quantidadeVenda = produto.quantidade;
-
-        // Desabilita o botão de comprar
-        produto.isEsgotado = true;
-
-        // Exibe mensagem de produto esgotado
-        this.confirmationService.confirm({
-          message: 'Produto esgotado!',
-          header: 'Aviso',
-          rejectVisible: false,
-          accept: () => {
-            // Código a ser executado quando o usuário clicar em "OK"
-          },
-        });
       }
+      produto.isEsgotado = produto.quantidade === 0 || produto.quantidadeVenda > produto.quantidade; // Atualiza o atributo isEsgotado
       this.atualizarQuantidade(produto);
     }
   }
