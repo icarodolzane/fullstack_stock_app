@@ -12,9 +12,9 @@ Desafio Técnico  – Desenvolvedor de Software
 
 > :information_source: Rode os serviços `mysql_service` e `back_service` e `front_service`  com o comando `docker-compose up -d` na raiz do projeto.
 
-- Lembre-se de parar o `mysql` se estiver usando localmente na porta padrão (`3306`), ou adapte, alterando 3306 por uma porta de sua preferência no arquivo docker-compose.yml;
+- Lembre-se de parar o `mysql` se estiver usando localmente na porta padrão (`3306`);
 - Esses serviços irão inicializar um container chamado `estoque_db`, `estoque_back`  e outro chamado `estoque_front`;
- Lembre-se de liberar a porta padrão (`4200`) do Angular para o frontend, ou adapte, alterando 4200 por uma porta de sua preferência no arquivo docker-compose.yml;
+ Lembre-se de liberar a porta padrão (`4200`) do Angular para o frontend;
 
  - A partir daqui você pode abrir: `http://localhost:8000/docs` a documentação da API no Swagger UI.
  - Acessar `http://localhost:4200/login` para ir para o frontend da aplicação.
@@ -38,7 +38,7 @@ Desafio Técnico  – Desenvolvedor de Software
 	{
 		"id" : 3,
 		"usuario" : "oppenheimer",
-		"senha" : "oppenbarbie"
+		"senha" : "oppenheimer"
 	},
 	{
 		"id" : 4,
