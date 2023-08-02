@@ -1,4 +1,4 @@
-# iatecam_challenge
+# FullStack -Sistema de Estoque / Compra de produtos. 
 Desafio Técnico  – Desenvolvedor de Software 
 
 # Orientações
