@@ -1,5 +1,5 @@
 # FullStack -Sistema de Estoque / Compra de produtos. 
-Desafio Técnico  – Desenvolvedor de Software 
+Desafio Técnico
 Controle de estoque de produtos
 Aplicação funciona como um controle de vendas para um e-commerce.
 Na aplicação, deverá é possível:
