@@ -1,15 +1,18 @@
-# FullStack -Sistema de Estoque / Compra de produtos. 
 
-Controle de estoque de produtos
-Aplicação funciona como um controle de vendas para um e-commerce.
-Na aplicação, deverá é possível:
-● Cadastrar categoria:
-● Informar descrição da categoria.
-● Cadastrar produtos:
-● Informar descrição do produto;
-● Informar valor do produto em real;
-● Informar categoria do produto;
-● Informar quantidade em estoque;
+# FullStack -Sistema de Estoque / Compra de produtos. 
+## Controle de estoque de produtos
+
+
+> Aplicação funciona como um controle de vendas para um e-commerce.
+Na aplicação é possível:
+
+ - Cadastrar categoria:
+ - Informar descrição da categoria.
+ - Cadastrar produtos.
+ -  Informar descrição do produto.
+ - Informar valor do produto em real.
+ - Informar categoria do produto.
+ -  Informar quantidade em estoque.
 
 1. Telas
 1.1 Tela de Login
