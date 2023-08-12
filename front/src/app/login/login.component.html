@@ -5,11 +5,11 @@
     </div>
 
     <div>
-      <label for="username" class="block text-900 font-medium mb-2">Username</label>
-      <input id="username" type="text" placeholder="Username" pInputText class="w-full mb-3" [(ngModel)]="username" (input)="checkFields()">
+      <label for="username" class="block text-900 font-medium mb-2">Usuário</label>
+      <input id="username" type="text" placeholder="usuário" pInputText class="w-full mb-3" [(ngModel)]="username" (input)="checkFields()">
 
-      <label for="password" class="block text-900 font-medium mb-2">Password</label>
-      <input id="password" type="password" placeholder="Password" pInputText class="w-full mb-3" [(ngModel)]="password" (input)="checkFields()">
+      <label for="password" class="block text-900 font-medium mb-2">Senha</label>
+      <input id="password" type="password" placeholder="senha" pInputText class="w-full mb-3" [(ngModel)]="password" (input)="checkFields()">
 
       <div *ngIf="isLoginFailed" class="login-error p-mb-3">
         <p-messages [(value)]="messages" [enableService]="false"></p-messages>

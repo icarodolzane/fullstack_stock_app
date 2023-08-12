@@ -1,17 +1,4 @@
-
-.search-container{
-  display: flex;
-  flex-direction: row;
-  gap: 50px;
+#title h4{
+  font-family: epilogue;
+  color: #1D4ED8;
 }
-
-.search {
-  display: flex;
-  gap: 20px;
-}
-
-.search input {
-  min-width: 400px;
-  width: 200px;
-}
-
